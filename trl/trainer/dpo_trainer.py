@@ -461,6 +461,7 @@ class DPOTrainer(Trainer):
                 - F.logsigmoid(-self.beta * logits) * self.label_smoothing
             )
         elif self.loss_type == "hinge":
+            print(1)
             losses = torch.relu(1 - self.beta * logits)
         elif self.loss_type == "ipo":
             # eqn (17) of the paper where beta is the regularization parameter for the IPO loss, denoted by tau in the paper.
